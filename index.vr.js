@@ -20,7 +20,7 @@ export default class OutdoorMovieTheater extends React.Component {
         }
     }
 
-    updateScene(scene) {
+    updateScene = (scene) => {
       switch (scene) {
           case 2:
             this.setState({ mainMenu: false, sceneSelect: true});
@@ -46,10 +46,15 @@ export default class OutdoorMovieTheater extends React.Component {
         </Pano>
           {
             mainMenu ? (
-              <MainMenu text={'Movie in the Bay'} buttonText={'Select a Movie'}/>
+              <MainMenu text={'Movie in the Bay'}
+                        buttonText={'Select a Movie'}
+                        updateScene={this.updateScene} scene={1} />
                 ) : (
                   sceneSelect ? (
-                      <SceneSelect text={'Scene Select'} buttonText={'Elf'} />
+                      <SceneSelect text={'Scene Select'}
+                                   buttonText={'Elf'}
+                                   updateScene={this.updateScene}
+                                   scene={2}/>
                 ) : (
                     < MovieTheater />
                   )

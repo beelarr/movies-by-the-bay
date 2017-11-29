@@ -17,7 +17,11 @@ export default class MainMenuContainer extends React.Component {
                 }}
             >
                 <Title text={this.props.text} />
-                <Button buttonText={this.props.buttonText} />
+                <Button
+                    buttonText={this.props.buttonText}
+                    updateScene={this.props.updateScene}
+                    scene={this.props.scene}
+                />
 
             </View>
         )
