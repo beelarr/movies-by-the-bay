@@ -6,17 +6,20 @@ import { Easing } from 'react-native';
 export default class MovieTitle extends React.Component {
     constructor() {
         super();
-        this.state = {slideValue: new Animated.Value(1.5)}
+        this.state = {
+            fadeSlide: new Animated.Value(0)
+        }
     }
 
 
 componentDidMount() {
-        Animated.spring(
-          this.state.slideValue,
+        Animated.timing(
+          this.state.fadeSlide,
             {
-                toValue: 0,
-                friction: 2,
-                tension: 5
+                toValue:1,
+                duration: 1000,
+                delay: 100,
+                easing: Easing.ease
             }
         ).start();
 }
@@ -30,10 +33,15 @@ componentDidMount() {
                 style={{
                     fontSize: 0.5,
                     fontWeight: '400',
+                    opacity: this.state.fadeSlide,
                     textAlign: 'center',
                     textAlignVertical: 'center',
                     transform: [
-                        {translateY: this.state.slideValue}
+                        {translateY: this.state.fadeSlide.interpolate({
+                            inputRange: [0, 1],
+                            outputRange: [.3, 0]
+                        })
+                        }
                     ]
 
                 }}
