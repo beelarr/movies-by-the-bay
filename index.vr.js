@@ -46,7 +46,7 @@ export default class OutdoorMovieTheater extends React.Component {
         </Pano>
           {
             mainMenu ? (
-              <MainMenu text={'Movie in the Bay'}
+              <MainMenu text={'Movies in the Bay'}
                         buttonText={'Select a Movie'}
                         updateScene={this.updateScene} scene={1} />
                 ) : (
