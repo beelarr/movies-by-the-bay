@@ -1,7 +1,7 @@
 import React from 'react';
-import MainMenu from './vr/Components/Scenes/MainMenu';
-import MovieTheater from './vr/Components/Scenes/MovieTheater';
-import SceneSelect from "./vr/Components/Scenes/SceneSelect";
+import MainMenu from './Components/Scenes/MainMenu';
+import MovieTheater from './Components/Scenes/MovieTheater';
+import SceneSelect from "./Components/Scenes/SceneSelect";
 
 import {
   AppRegistry,
