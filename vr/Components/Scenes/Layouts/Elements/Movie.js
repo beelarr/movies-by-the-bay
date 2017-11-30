@@ -12,7 +12,7 @@ export default class Movie extends React.Component{
             >
                 <Video
                     style={{height: 2}}
-                    source={asset('elf.mp4')}
+                    source={asset('fire.mp4')}
                 />
 
             </View>

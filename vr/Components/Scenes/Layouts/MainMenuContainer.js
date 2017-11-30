@@ -21,6 +21,7 @@ export default class MainMenuContainer extends React.Component {
                     buttonText={this.props.buttonText}
                     updateScene={this.props.updateScene}
                     scene={this.props.scene}
+                    onClick={this.props.onClick}
                 />
 
             </View>

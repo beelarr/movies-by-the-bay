@@ -2,13 +2,21 @@ import React from 'react';
 import {
     Text,
     View,
-    VrButton
 } from 'react-vr';
+import GazeButton from 'react-vr-gaze-button'
+
 
 
 export default class Button extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            buttonIsClicked: false
+        }
+    }
     render() {
         const scene = this.props.scene;
+        const buttonIsClicked = this.state.buttonIsClicked;
         return (
             <View>
                 <View
@@ -17,21 +25,24 @@ export default class Button extends React.Component {
 
                     {scene === 1 ?
                         //if currently in scene 1
-                        <VrButton onClick={() => this.props.updateScene(2)}>
+                        <GazeButton onClick={() => {
+                            this.props.updateScene(2);
+                            this.setState({buttonIsClicked:true})}} duration={2000}>
                             <Text
-                                style={{fontSize: 0.2, textAlign: 'center'}}
-                            >
+                                style={{fontSize: 0.2, textAlign: 'center'}}>
                                 {this.props.buttonText}
                             </Text>
-                        </VrButton>
+                        </GazeButton>
                         :
                         //if currently in scene 2
-                        <VrButton
-                            onClick={() => this.props.updateScene(3)}>
+                        <GazeButton
+                            onClick={() => {
+                                this.props.updateScene(3);
+                                this.setState({buttonIsClicked:true})}} duration={2000}>
                             <Text style={{fontSize: 0.2, textAlign: 'center'}}>
                                 {this.props.buttonText}
                             </Text>
-                        </VrButton>
+                        </GazeButton>
                     }
                 </View>
             </View>

@@ -1,3 +1,6 @@
+import 'webvr-polyfill';
+WebVRPolyfill.InstallWebVRSpecShim();
+
 
 // Auto-generated content.
 // This file contains the boilerplate to set up your React app.

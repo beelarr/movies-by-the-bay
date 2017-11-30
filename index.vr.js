@@ -16,7 +16,7 @@ export default class OutdoorMovieTheater extends React.Component {
         super();
         this.state = {
             mainMenu: true,
-            sceneSelect: false
+            sceneSelect: false,
         }
     }
 
