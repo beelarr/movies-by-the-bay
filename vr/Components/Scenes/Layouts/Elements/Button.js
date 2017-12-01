@@ -16,30 +16,54 @@ export default class Button extends React.Component {
         }
     }
     render() {
-        const scene = this.props.scene;
-        const buttonIsClicked = this.state.buttonIsClicked;
+
         return (
             <View>
                 <View
-                    style={{ margin: 0.1, height: 0.4, backgroundColor: '#1AC8F7'}}
-                >
+                    style={{ margin: 0.1, height: 0.4, backgroundColor: '#1AC8F7'}}>
 
-                    {scene === 1 ?
-                        //if currently in scene 1
-                        <VrButton onClick={() => this.props.updateScene(2)}>
-                            <Text
-                                style={{fontSize: 0.3, textAlign: 'center'}}>
-                                {this.props.buttonText}
-                            </Text>
-                        </VrButton>
+                    {this.props.scene === 1 ?
+                        <GazeButton onClick={() => {
+                            this.setState({buttonIsClicked: true})
+                            this.props.updateScene(2)
+
+                        }} duration={1000}
+                                    style={{
+                                        flex: 1,
+                                        backgroundColor: '1AC8F7',
+                                        height: 0.3,
+                                        layoutOrigin: [0.5, 0.5],
+                                    }}>
+                            {time => (
+
+                                <Text
+                                    style={{fontSize: 0.3, textAlign: 'center'}}>
+                                    {this.state.buttonIsClicked ? 'You have clicked me' : `${this.props.buttonText} | ${time}`}
+                                </Text>
+                            )}
+
+                        </GazeButton>
                         :
-                        //if currently in scene 2
-                        <VrButton
-                            onClick={() => this.props.updateScene(3)}>
-                            <Text style={{fontSize: 0.3, textAlign: 'center'}}>
-                                {this.props.buttonText}
-                            </Text>
-                        </VrButton>
+                        <GazeButton onClick={() => {
+                            this.setState({buttonIsClicked: true})
+                            this.props.updateScene(3)
+
+                        }} duration={1000}
+                                    style={{
+                                        flex: 1,
+                                        backgroundColor: '1AC8F7',
+                                        height: 0.3,
+                                        layoutOrigin: [0.5, 0.5],
+                                    }}>
+                            {time => (
+
+                                <Text
+                                    style={{fontSize: 0.3, textAlign: 'center'}}>
+                                    {this.state.buttonIsClicked ? 'You have clicked me' : `${this.props.buttonText} | ${time}`}
+                                </Text>
+                            )}
+
+                        </GazeButton>
                     }
                 </View>
             </View>

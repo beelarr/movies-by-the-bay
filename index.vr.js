@@ -29,7 +29,7 @@ export default class OutdoorMovieTheater extends React.Component {
             this.setState({ mainMenu: false, sceneSelect: false});
             break;
       }
-    }
+    };
 
   render() {
       const mainMenu = this.state.mainMenu;
@@ -48,7 +48,8 @@ export default class OutdoorMovieTheater extends React.Component {
             mainMenu ? (
               <MainMenu text={'Movies in the Bay'}
                         buttonText={'Select a Movie'}
-                        updateScene={this.updateScene} scene={1} />
+                        updateScene={this.updateScene}
+                        scene={1} />
                 ) : (
                   sceneSelect ? (
                       <SceneSelect text={'Scene Select'}
