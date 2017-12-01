@@ -11,6 +11,7 @@ export default class MainMenu extends React.Component {
                 buttonText={this.props.buttonText}
                 updateScene={this.props.updateScene}
                 scene={this.props.scene}
+
             />
         )
     }

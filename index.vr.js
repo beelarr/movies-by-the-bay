@@ -52,7 +52,7 @@ export default class OutdoorMovieTheater extends React.Component {
                 ) : (
                   sceneSelect ? (
                       <SceneSelect text={'Scene Select'}
-                                   buttonText={'Elf'}
+                                   buttonText={'Fireplace'}
                                    updateScene={this.updateScene}
                                    scene={2}/>
                 ) : (
